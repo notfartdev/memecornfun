@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { VideoFeed } from "@/components/video-feed"
+import { ProtectionScript } from "@/app/protection"
 
 export default function FeedPage() {
   const [showWelcome, setShowWelcome] = useState(true)
@@ -220,6 +221,156 @@ export default function FeedPage() {
       title: "Corn epic finale! 🎆🌽 #epic #finale #corn #grand #ending #spectacular",
       url: "/video42.mp4",
     },
+    {
+      id: 43,
+      title: "Corn renaissance begins! 🎨🌽 #renaissance #art #corn #rebirth #culture",
+      url: "/video43.mp4",
+    },
+    {
+      id: 44,
+      title: "Corn philosophy lecture! 🧠🌽 #philosophy #wisdom #corn #deep #thoughts",
+      url: "/video44.mp4",
+    },
+    {
+      id: 45,
+      title: "Corn meditation session! 🧘🌽 #meditation #zen #corn #peace #mindfulness",
+      url: "/video45.mp4",
+    },
+    {
+      id: 46,
+      title: "Corn therapy session! 🛋️🌽 #therapy #healing #corn #mental #health",
+      url: "/video46.mp4",
+    },
+    {
+      id: 47,
+      title: "Corn stand-up comedy! 🎤🌽 #standup #comedy #corn #jokes #laughs",
+      url: "/video47.mp4",
+    },
+    {
+      id: 48,
+      title: "Corn podcast episode! 🎙️🌽 #podcast #discussion #corn #talk #show",
+      url: "/video48.mp4",
+    },
+    {
+      id: 49,
+      title: "Corn ASMR experience! 🎧🌽 #asmr #relaxing #corn #sounds #calm",
+      url: "/video49.mp4",
+    },
+    {
+      id: 50,
+      title: "Corn unboxing video! 📦🌽 #unboxing #review #corn #surprise #excitement",
+      url: "/video50.mp4",
+    },
+    {
+      id: 51,
+      title: "Corn reaction video! 😱🌽 #reaction #shocked #corn #surprised #amazed",
+      url: "/video51.mp4",
+    },
+    {
+      id: 52,
+      title: "Corn tutorial series! 📚🌽 #tutorial #learning #corn #education #howto",
+      url: "/video52.mp4",
+    },
+    {
+      id: 53,
+      title: "Corn challenge video! 💪🌽 #challenge #difficult #corn #test #skills",
+      url: "/video53.mp4",
+    },
+    {
+      id: 54,
+      title: "Corn prank compilation! 😂🌽 #prank #funny #corn #jokes #laughs",
+      url: "/video54.mp4",
+    },
+    {
+      id: 55,
+      title: "Corn conspiracy theory! 🕵️🌽 #conspiracy #mystery #corn #secrets #truth",
+      url: "/video55.mp4",
+    },
+    {
+      id: 56,
+      title: "Corn ultimate collection! 🏆🌽 #ultimate #collection #corn #best #final",
+      url: "/video56.mp4",
+    },
+    {
+      id: 57,
+      title: "Corn cooking competition! 👨‍🍳🌽 #cooking #competition #corn #chef #battle",
+      url: "/video57.mp4",
+    },
+    {
+      id: 58,
+      title: "Corn speed run! ⚡🌽 #speedrun #gaming #corn #fast #record",
+      url: "/video58.mp4",
+    },
+    {
+      id: 59,
+      title: "Corn escape room! 🚪🌽 #escaperoom #puzzle #corn #mystery #challenge",
+      url: "/video59.mp4",
+    },
+    {
+      id: 60,
+      title: "Corn time-lapse! ⏰🌽 #timelapse #growth #corn #nature #beautiful",
+      url: "/video60.mp4",
+    },
+    {
+      id: 61,
+      title: "Corn stop-motion! 🎬🌽 #stopmotion #animation #corn #creative #art",
+      url: "/video61.mp4",
+    },
+    {
+      id: 62,
+      title: "Corn drone footage! 🚁🌽 #drone #aerial #corn #field #beautiful",
+      url: "/video62.mp4",
+    },
+    {
+      id: 63,
+      title: "Corn 360° experience! 🌐🌽 #360 #vr #corn #immersive #experience",
+      url: "/video63.mp4",
+    },
+    {
+      id: 64,
+      title: "Corn slow motion! 🐌🌽 #slowmotion #corn #beautiful #details #art",
+      url: "/video64.mp4",
+    },
+    {
+      id: 65,
+      title: "Corn macro photography! 🔍🌽 #macro #photography #corn #closeup #details",
+      url: "/video65.mp4",
+    },
+    {
+      id: 66,
+      title: "Corn night vision! 🌙🌽 #nightvision #dark #corn #mysterious #night",
+      url: "/video66.mp4",
+    },
+    {
+      id: 67,
+      title: "Corn thermal imaging! 🌡️🌽 #thermal #heat #corn #science #technology",
+      url: "/video67.mp4",
+    },
+    {
+      id: 68,
+      title: "Corn underwater! 🌊🌽 #underwater #corn #aquatic #mysterious #deep",
+      url: "/video68.mp4",
+    },
+    {
+      id: 69,
+      title: "Corn in space! 🚀🌽 #space #astronaut #corn #cosmic #galaxy",
+      url: "/video69.mp4",
+    },
+    {
+      id: 70,
+      title: "Corn deep sea! 🐠🌽 #deepsea #ocean #corn #underwater #mystery",
+      url: "/video70.mp4",
+    },
+    {
+      id: 71,
+      title: "Corn arctic expedition! 🧊🌽 #arctic #cold #corn #expedition #adventure",
+      url: "/video71.mp4",
+    },
+    {
+      id: 72,
+      title: "Corn desert survival! 🏜️🌽 #desert #survival #corn #hot #adventure",
+      url: "/video72.mp4",
+    },
     ]
 
     // Shuffle the videos array randomly
@@ -228,9 +379,11 @@ export default function FeedPage() {
   }, [])
 
   return (
-    <div className="h-screen overflow-hidden bg-black relative">
-      {/* Static Noise Effect */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
+    <>
+      <ProtectionScript />
+      <div className="h-screen overflow-hidden bg-black relative">
+        {/* Static Noise Effect - Optimized */}
+        <div className="absolute inset-0 opacity-20 pointer-events-none z-10">
         <div className="h-full w-full" style={{
           backgroundImage: `
             radial-gradient(circle at 20% 50%, rgba(247,147,26,0.2) 1px, transparent 1px),
@@ -239,12 +392,13 @@ export default function FeedPage() {
             radial-gradient(circle at 60% 40%, rgba(255,255,255,0.05) 1px, transparent 1px)
           `,
           backgroundSize: '200px 200px, 150px 150px, 100px 100px, 250px 250px',
-          animation: 'static 0.1s infinite linear'
+          animation: 'static 0.1s infinite linear',
+          willChange: 'transform'
         }} />
       </div>
-      
-      {/* Video Feed - Full Screen */}
-      <VideoFeed videos={videos} />
+
+      {/* Video Feed - Full Screen with Performance Optimization */}
+        <VideoFeed videos={videos} />
       
       {/* Welcome overlay - dismissible */}
       {showWelcome && (
@@ -268,6 +422,7 @@ export default function FeedPage() {
                   </div>
         </div>
       )}
-    </div>
+      </div>
+    </>
   )
 }

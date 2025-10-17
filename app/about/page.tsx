@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useEffect, useRef } from "react"
+import { ProtectionScript } from "@/app/protection"
 
 export default function AboutPage() {
   const audioRef = useRef<HTMLAudioElement>(null)
@@ -37,7 +38,9 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-4 sm:p-8 relative overflow-hidden turn-on-animation">
+    <>
+      <ProtectionScript />
+      <div className="min-h-screen bg-black flex items-center justify-center p-4 sm:p-8 relative overflow-hidden turn-on-animation">
       {/* Background Audio */}
       <audio 
         ref={audioRef}
@@ -186,6 +189,7 @@ export default function AboutPage() {
           </Link>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   )
 }

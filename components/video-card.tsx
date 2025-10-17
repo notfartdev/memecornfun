@@ -93,9 +93,13 @@ export function VideoCard({ video, isActive }: VideoCardProps) {
           playsInline
           preload="none"
           loading="lazy"
+          poster={`/placeholder.jpg`}
+          data-video-id={video.id}
           onLoadStart={() => console.log('Video loading started:', video.url)}
           onCanPlay={() => console.log('Video can play:', video.url)}
           onError={(e) => console.error('Video error:', video.url, e)}
+          onLoad={() => console.log('Video loaded:', video.url)}
+          onWaiting={() => console.log('Video buffering:', video.url)}
         >
           <source src={video.url} type="video/mp4" />
           Your browser does not support the video tag.

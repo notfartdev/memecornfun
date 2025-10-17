@@ -30,6 +30,18 @@ export function VideoFeed({ videos }: VideoFeedProps) {
       // Only update if the index actually changed
       if (newIndex !== currentIndex) {
         setCurrentIndex(newIndex)
+        
+        // Preload next and previous videos for smoother experience
+        const preloadIndexes = [newIndex - 1, newIndex + 1].filter(
+          i => i >= 0 && i < videos.length
+        )
+        
+        preloadIndexes.forEach(i => {
+          const videoElement = document.querySelector(`video[data-video-id="${videos[i].id}"]`) as HTMLVideoElement
+          if (videoElement && videoElement.preload === 'none') {
+            videoElement.preload = 'metadata'
+          }
+        })
       }
     }
 
