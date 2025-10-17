@@ -18,9 +18,12 @@ const vt323 = VT323({
 })
 
 export const metadata: Metadata = {
-  title: "SEND NODES - Retro Terminal",
-  description: "Retro arcade terminal interface",
+  title: "Memecorn",
+  description: "TikTok-style video feed for corn content and memes",
   generator: "v0.app",
+  icons: {
+    icon: "/favicon.svg",
+  },
 }
 
 export default function RootLayout({
