@@ -87,13 +87,12 @@ export function VideoCard({ video, isActive }: VideoCardProps) {
         {/* Video Player */}
         <video
           ref={videoRef}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover bg-black"
           loop
           muted={isMuted}
           playsInline
           preload="none"
           loading="lazy"
-          poster={`/placeholder.jpg`}
           data-video-id={video.id}
           onLoadStart={() => console.log('Video loading started:', video.url)}
           onCanPlay={() => console.log('Video can play:', video.url)}
