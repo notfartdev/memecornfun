@@ -87,12 +87,13 @@ export function VideoCard({ video, isActive }: VideoCardProps) {
         {/* Video Player */}
         <video
           ref={videoRef}
-          className="w-full h-full object-cover bg-black"
+          className="w-full h-full object-cover"
           loop
           muted={isMuted}
           playsInline
           preload="none"
           loading="lazy"
+          poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMDAwMDAwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMjAwIiBmb250LWZhbWlseT0iQ291cmllciBOZXcsIG1vbm9zcGFjZSIgZm9udC1zaXplPSI0OCIgZmlsbD0iI0Y3OTMxQSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPvCfk70gPC90ZXh0Pgo8dGV4dCB4PSIyMDAiIHk9IjI1MCIgZm9udC1mYW1pbHk9IkNvdXJpZXIgTmV3LCBtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiNmZmZmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxPQURJTkcgQ09STi4uLjwvdGV4dD4KPC9zdmc+"
           data-video-id={video.id}
           onLoadStart={() => console.log('Video loading started:', video.url)}
           onCanPlay={() => console.log('Video can play:', video.url)}
