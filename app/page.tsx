@@ -76,7 +76,7 @@ export default function HomePage() {
         </h1>
 
         <p className="font-[family-name:var(--font-press-start)] text-white text-lg sm:text-xl md:text-2xl tracking-wide mb-8 sm:mb-12">
-          &lt;CA: 0xca35418bd4b7c0ab1b953bc7a64d4791d68d4444&gt;
+          &lt;CA : ???&gt;
         </p>
 
         <div className="border-2 sm:border-4 border-[#F7931A] p-4 sm:p-6 md:p-8 lg:p-12 space-y-4 sm:space-y-6 bg-black/40 backdrop-blur-sm">
