@@ -78,9 +78,9 @@ export function VideoCard({ video, isActive }: VideoCardProps) {
 
   return (
     <div className="relative w-full h-screen bg-black overflow-hidden flex items-center justify-center">
-      {/* Video/Image Container - Properly Sized */}
+      {/* Video/Image Container - Mobile Responsive */}
       <div 
-        className="relative w-full max-w-sm h-[80vh] cursor-pointer"
+        className="relative w-full max-w-xs sm:max-w-sm h-[70vh] sm:h-[80vh] cursor-pointer"
         onClick={handleVideoClick}
         style={{ pointerEvents: 'auto' }}
       >
@@ -91,7 +91,8 @@ export function VideoCard({ video, isActive }: VideoCardProps) {
           loop
           muted={isMuted}
           playsInline
-          preload="metadata"
+          preload="none"
+          loading="lazy"
           onLoadStart={() => console.log('Video loading started:', video.url)}
           onCanPlay={() => console.log('Video can play:', video.url)}
           onError={(e) => console.error('Video error:', video.url, e)}
@@ -102,9 +103,9 @@ export function VideoCard({ video, isActive }: VideoCardProps) {
 
 
         {/* Video Info Overlay - Bottom Left */}
-        <div className="absolute bottom-4 left-4 text-white max-w-xs">
-          <div className="bg-black/60 backdrop-blur-sm border border-[#F7931A] p-3">
-            <h3 className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-sm tracking-wide mb-2">
+        <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 text-white max-w-xs">
+          <div className="bg-black/60 backdrop-blur-sm border border-[#F7931A] p-2 sm:p-3">
+            <h3 className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs sm:text-sm tracking-wide mb-1 sm:mb-2">
               @your_video
             </h3>
             <p className="font-[family-name:var(--font-press-start)] text-white text-xs tracking-wide leading-relaxed">
@@ -115,42 +116,42 @@ export function VideoCard({ video, isActive }: VideoCardProps) {
       </div>
 
       {/* Action Buttons - Right Side */}
-      <div className="absolute right-4 top-1/2 transform -translate-y-1/2 flex flex-col gap-6">
+      <div className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 sm:gap-6">
         {/* Home Button */}
-        <Link href="/" className="flex flex-col items-center gap-2 hover:scale-110 transition-transform">
-          <div className="w-14 h-14 border-4 border-[#F7931A] bg-black/50 flex items-center justify-center rounded-full">
-            <span className="text-[#F7931A] text-2xl">🏠</span>
+        <Link href="/" className="flex flex-col items-center gap-1 sm:gap-2 hover:scale-110 transition-transform">
+          <div className="w-10 h-10 sm:w-14 sm:h-14 border-2 sm:border-4 border-[#F7931A] bg-black/50 flex items-center justify-center rounded-full">
+            <span className="text-[#F7931A] text-lg sm:text-2xl">🏠</span>
           </div>
-          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-2 py-1 border border-[#F7931A]">
+          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-1 sm:px-2 py-1 border border-[#F7931A] hidden sm:block">
             HOME
           </span>
         </Link>
 
         {/* Comment Button */}
-        <button className="flex flex-col items-center gap-2 hover:scale-110 transition-transform">
-          <div className="w-14 h-14 border-4 border-[#F7931A] bg-black/50 flex items-center justify-center rounded-full">
-            <span className="text-[#F7931A] text-2xl">💬</span>
+        <button className="flex flex-col items-center gap-1 sm:gap-2 hover:scale-110 transition-transform">
+          <div className="w-10 h-10 sm:w-14 sm:h-14 border-2 sm:border-4 border-[#F7931A] bg-black/50 flex items-center justify-center rounded-full">
+            <span className="text-[#F7931A] text-lg sm:text-2xl">💬</span>
           </div>
-          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-2 py-1 border border-[#F7931A]">
+          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-1 sm:px-2 py-1 border border-[#F7931A] hidden sm:block">
             {Math.floor((video.id * 17 + 89) % 100)}
           </span>
         </button>
 
         {/* Share Button */}
-        <button className="flex flex-col items-center gap-2 hover:scale-110 transition-transform">
-          <div className="w-14 h-14 border-4 border-[#F7931A] bg-black/50 flex items-center justify-center rounded-full">
-            <span className="text-[#F7931A] text-2xl">→</span>
+        <button className="flex flex-col items-center gap-1 sm:gap-2 hover:scale-110 transition-transform">
+          <div className="w-10 h-10 sm:w-14 sm:h-14 border-2 sm:border-4 border-[#F7931A] bg-black/50 flex items-center justify-center rounded-full">
+            <span className="text-[#F7931A] text-lg sm:text-2xl">→</span>
           </div>
         </button>
 
         {/* Mute/Unmute Button */}
-        <button onClick={handleMuteToggle} className="flex flex-col items-center gap-2 hover:scale-110 transition-transform">
-          <div className="w-14 h-14 border-4 border-[#F7931A] bg-black/50 flex items-center justify-center rounded-full">
-            <span className="text-[#F7931A] text-2xl">
+        <button onClick={handleMuteToggle} className="flex flex-col items-center gap-1 sm:gap-2 hover:scale-110 transition-transform">
+          <div className="w-10 h-10 sm:w-14 sm:h-14 border-2 sm:border-4 border-[#F7931A] bg-black/50 flex items-center justify-center rounded-full">
+            <span className="text-[#F7931A] text-lg sm:text-2xl">
               {isMuted ? "🔇" : "🔊"}
             </span>
           </div>
-          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-2 py-1 border border-[#F7931A]">
+          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-1 sm:px-2 py-1 border border-[#F7931A] hidden sm:block">
             VOLUME
           </span>
         </button>
@@ -160,12 +161,12 @@ export function VideoCard({ video, isActive }: VideoCardProps) {
           href="https://x.com/memecornfun" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex flex-col items-center gap-2 hover:scale-110 transition-transform"
+          className="flex flex-col items-center gap-1 sm:gap-2 hover:scale-110 transition-transform"
         >
-          <div className="w-14 h-14 border-4 border-[#F7931A] bg-gradient-to-br from-[#F7931A] to-[#FF8C00] rounded-full flex items-center justify-center">
-            <span className="text-2xl">🌽</span>
+          <div className="w-10 h-10 sm:w-14 sm:h-14 border-2 sm:border-4 border-[#F7931A] bg-gradient-to-br from-[#F7931A] to-[#FF8C00] rounded-full flex items-center justify-center">
+            <span className="text-lg sm:text-2xl">🌽</span>
           </div>
-          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-2 py-1 border border-[#F7931A]">
+          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-1 sm:px-2 py-1 border border-[#F7931A] hidden sm:block">
             @MEMECORNFUN
           </span>
         </a>
