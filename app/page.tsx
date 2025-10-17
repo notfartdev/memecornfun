@@ -113,41 +113,45 @@ export default function HomePage() {
             href="https://x.com/memecornfun" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center justify-center hover:scale-110 transition-transform duration-200"
+            className="flex flex-col items-center justify-center hover:scale-110 transition-transform duration-200"
           >
             <img 
               src="https://dwvo2npct47gg.cloudfront.net/gifs/awgeForum.gif" 
               alt="Twitter" 
               className="w-16 h-16 sm:w-20 sm:h-20"
             />
+            <p className="font-[family-name:var(--font-press-start)] text-white text-xs sm:text-sm mt-2">X</p>
           </a>
 
           {/* VHS Camera GIF - Links to Feed */}
-          <Link href="/feed" className="flex items-center justify-center hover:scale-110 transition-transform duration-200">
+          <Link href="/feed" className="flex flex-col items-center justify-center hover:scale-110 transition-transform duration-200">
             <img 
               src="https://dwvo2npct47gg.cloudfront.net/gifs/vhs-camera.gif" 
               alt="Enter Feed" 
               className="w-16 h-16 sm:w-20 sm:h-20"
             />
+            <p className="font-[family-name:var(--font-press-start)] text-white text-xs sm:text-sm mt-2">MEDIA</p>
           </Link>
 
           {/* Pager GIF - Links to Contact */}
-          <Link href="/contact" className="flex items-center justify-center hover:scale-110 transition-transform duration-200">
+          <Link href="/contact" className="flex flex-col items-center justify-center hover:scale-110 transition-transform duration-200">
             <img 
               src="https://dwvo2npct47gg.cloudfront.net/gifs/pager.gif" 
               alt="Contact" 
               className="w-16 h-16 sm:w-20 sm:h-20"
             />
+            <p className="font-[family-name:var(--font-press-start)] text-white text-xs sm:text-sm mt-2">CONTACT</p>
           </Link>
 
-          {/* About - Question Block GIF */}
-          <div className="flex items-center justify-center">
-            <img 
-              src="https://dwvo2npct47gg.cloudfront.net/gifs/question-block-red.gif" 
-              alt="About" 
-              className="w-16 h-16 sm:w-20 sm:h-20 hover:scale-110 transition-transform duration-200"
-            />
-          </div>
+                  {/* About - Question Block GIF */}
+                  <Link href="/about" className="flex flex-col items-center justify-center hover:scale-110 transition-transform duration-200">
+                    <img 
+                      src="https://dwvo2npct47gg.cloudfront.net/gifs/question-block-red.gif" 
+                      alt="About" 
+                      className="w-16 h-16 sm:w-20 sm:h-20"
+                    />
+                    <p className="font-[family-name:var(--font-press-start)] text-white text-xs sm:text-sm mt-2">ABOUT</p>
+                  </Link>
         </div>
       </div>
     </div>

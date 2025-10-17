@@ -102,57 +102,22 @@ export function VideoCard({ video, isActive }: VideoCardProps) {
         </video>
 
 
-        {/* Video Info Overlay - Bottom Left */}
-        <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 text-white max-w-xs">
-          <div className="bg-black/60 backdrop-blur-sm border border-[#F7931A] p-2 sm:p-3">
-            <h3 className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs sm:text-sm tracking-wide mb-1 sm:mb-2">
-              @your_video
-            </h3>
-            <p className="font-[family-name:var(--font-press-start)] text-white text-xs tracking-wide leading-relaxed">
-              {video.title}
-            </p>
-          </div>
-        </div>
       </div>
 
       {/* Action Buttons - Right Side */}
       <div className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 flex flex-col gap-3 sm:gap-6">
         {/* Home Button */}
         <Link href="/" className="flex flex-col items-center gap-1 sm:gap-2 hover:scale-110 transition-transform">
-          <div className="w-10 h-10 sm:w-14 sm:h-14 border-2 sm:border-4 border-[#F7931A] bg-black/50 flex items-center justify-center rounded-full">
-            <span className="text-[#F7931A] text-lg sm:text-2xl">🏠</span>
-          </div>
-          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-1 sm:px-2 py-1 border border-[#F7931A] hidden sm:block">
+          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-1 sm:px-2 py-1 border border-[#F7931A]">
             HOME
           </span>
         </Link>
 
-        {/* Comment Button */}
-        <button className="flex flex-col items-center gap-1 sm:gap-2 hover:scale-110 transition-transform">
-          <div className="w-10 h-10 sm:w-14 sm:h-14 border-2 sm:border-4 border-[#F7931A] bg-black/50 flex items-center justify-center rounded-full">
-            <span className="text-[#F7931A] text-lg sm:text-2xl">💬</span>
-          </div>
-          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-1 sm:px-2 py-1 border border-[#F7931A] hidden sm:block">
-            {Math.floor((video.id * 17 + 89) % 100)}
-          </span>
-        </button>
-
-        {/* Share Button */}
-        <button className="flex flex-col items-center gap-1 sm:gap-2 hover:scale-110 transition-transform">
-          <div className="w-10 h-10 sm:w-14 sm:h-14 border-2 sm:border-4 border-[#F7931A] bg-black/50 flex items-center justify-center rounded-full">
-            <span className="text-[#F7931A] text-lg sm:text-2xl">→</span>
-          </div>
-        </button>
 
         {/* Mute/Unmute Button */}
         <button onClick={handleMuteToggle} className="flex flex-col items-center gap-1 sm:gap-2 hover:scale-110 transition-transform">
-          <div className="w-10 h-10 sm:w-14 sm:h-14 border-2 sm:border-4 border-[#F7931A] bg-black/50 flex items-center justify-center rounded-full">
-            <span className="text-[#F7931A] text-lg sm:text-2xl">
-              {isMuted ? "🔇" : "🔊"}
-            </span>
-          </div>
-          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-1 sm:px-2 py-1 border border-[#F7931A] hidden sm:block">
-            VOLUME
+          <span className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-xs bg-black/50 px-1 sm:px-2 py-1 border border-[#F7931A]">
+            {isMuted ? "UNMUTE" : "MUTE"}
           </span>
         </button>
 

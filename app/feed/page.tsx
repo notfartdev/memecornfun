@@ -1,11 +1,15 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { VideoFeed } from "@/components/video-feed"
 
 export default function FeedPage() {
   const [showWelcome, setShowWelcome] = useState(true)
-  const [videos, setVideos] = useState([
+  const [videos, setVideos] = useState<{id: number, title: string, url: string}[]>([])
+
+  // Randomize videos on component mount
+  useEffect(() => {
+    const allVideos = [
     {
       id: 1,
       title: "Testing my own video! 🌽 #test #myvideo #memecorn",
@@ -111,7 +115,117 @@ export default function FeedPage() {
       title: "Corn final episode! 🎬🌽 #final #episode #corn #ending",
       url: "/video21.mp4",
     },
-  ])
+    {
+      id: 22,
+      title: "Corn sequel begins! 🌽🎬 #sequel #corn #new #beginning",
+      url: "/video22.mp4",
+    },
+    {
+      id: 23,
+      title: "Corn superhero origin! 🦸🌽 #superhero #corn #origin #powers",
+      url: "/video23.mp4",
+    },
+    {
+      id: 24,
+      title: "Corn time travel! ⏰🌽 #timetravel #corn #adventure #future",
+      url: "/video24.mp4",
+    },
+    {
+      id: 25,
+      title: "Corn space mission! 🚀🌽 #space #mission #corn #astronaut",
+      url: "/video25.mp4",
+    },
+    {
+      id: 26,
+      title: "Corn detective story! 🕵️🌽 #detective #mystery #corn #clues",
+      url: "/video26.mp4",
+    },
+    {
+      id: 27,
+      title: "Corn cooking show! 👨‍🍳🌽 #cooking #show #corn #chef #recipe",
+      url: "/video27.mp4",
+    },
+    {
+      id: 28,
+      title: "Corn sports highlights! ⚽🌽 #sports #highlights #corn #athlete",
+      url: "/video28.mp4",
+    },
+    {
+      id: 29,
+      title: "Corn news report! 📺🌽 #news #report #corn #breaking",
+      url: "/video29.mp4",
+    },
+    {
+      id: 30,
+      title: "Corn weather forecast! 🌤️🌽 #weather #forecast #corn #meteorology",
+      url: "/video30.mp4",
+    },
+    {
+      id: 31,
+      title: "Corn documentary! 📽️🌽 #documentary #corn #nature #wildlife",
+      url: "/video31.mp4",
+    },
+    {
+      id: 32,
+      title: "Corn comedy special! 😂🌽 #comedy #special #corn #standup",
+      url: "/video32.mp4",
+    },
+    {
+      id: 33,
+      title: "Corn horror movie! 👻🌽 #horror #movie #corn #scary #thriller",
+      url: "/video33.mp4",
+    },
+    {
+      id: 34,
+      title: "Corn romance story! 💕🌽 #romance #love #corn #relationship",
+      url: "/video34.mp4",
+    },
+    {
+      id: 35,
+      title: "Corn action movie! 💥🌽 #action #movie #corn #explosions #thrills",
+      url: "/video35.mp4",
+    },
+    {
+      id: 36,
+      title: "Corn sci-fi adventure! 🤖🌽 #scifi #adventure #corn #technology",
+      url: "/video36.mp4",
+    },
+    {
+      id: 37,
+      title: "Corn fantasy quest! 🧙🌽 #fantasy #quest #corn #magic #adventure",
+      url: "/video37.mp4",
+    },
+    {
+      id: 38,
+      title: "Corn western movie! 🤠🌽 #western #movie #corn #cowboy #frontier",
+      url: "/video38.mp4",
+    },
+    {
+      id: 39,
+      title: "Corn musical! 🎵🌽 #musical #corn #song #dance #performance",
+      url: "/video39.mp4",
+    },
+    {
+      id: 40,
+      title: "Corn thriller! 😱🌽 #thriller #suspense #corn #mystery #tension",
+      url: "/video40.mp4",
+    },
+    {
+      id: 41,
+      title: "Corn family drama! 👨‍👩‍👧‍👦🌽 #family #drama #corn #relationships #emotions",
+      url: "/video41.mp4",
+    },
+    {
+      id: 42,
+      title: "Corn epic finale! 🎆🌽 #epic #finale #corn #grand #ending #spectacular",
+      url: "/video42.mp4",
+    },
+    ]
+
+    // Shuffle the videos array randomly
+    const shuffledVideos = [...allVideos].sort(() => Math.random() - 0.5)
+    setVideos(shuffledVideos)
+  }, [])
 
   return (
     <div className="h-screen overflow-hidden bg-black relative">
@@ -138,17 +252,20 @@ export default function FeedPage() {
           className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 cursor-pointer"
           onClick={() => setShowWelcome(false)}
         >
-          <div className="text-center text-white border-4 border-[#F7931A] p-8 bg-black/60 backdrop-blur-sm">
-            <h1 className="font-[family-name:var(--font-press-start)] text-white text-4xl md:text-6xl tracking-wider mb-4">
-              MEMECORN
-            </h1>
-            <p className="font-[family-name:var(--font-press-start)] text-white text-lg tracking-wide">
-              Click anywhere to start watching
-            </p>
-            <p className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-sm tracking-wide mt-2">
-              Scroll to discover more content
-            </p>
-          </div>
+                  <div className="text-center text-white border-4 border-[#F7931A] p-8 bg-black/60 backdrop-blur-sm">
+                    <h1 className="font-[family-name:var(--font-press-start)] text-white text-4xl md:text-6xl tracking-wider mb-4">
+                      ARE YOU CORNY ENOUGH?
+                    </h1>
+                    <p className="font-[family-name:var(--font-press-start)] text-white text-lg tracking-wide mb-4">
+                      WELCOME TO MEMECORN FEED!
+                    </p>
+                    <p className="font-[family-name:var(--font-press-start)] text-white text-lg tracking-wide">
+                      Click anywhere to start watching
+                    </p>
+                    <p className="font-[family-name:var(--font-press-start)] text-[#F7931A] text-sm tracking-wide mt-2">
+                      Scroll to discover more content
+                    </p>
+                  </div>
         </div>
       )}
     </div>
