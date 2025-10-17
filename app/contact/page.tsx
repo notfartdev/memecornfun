@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useEffect, useRef } from "react"
 
-export default function HomePage() {
+export default function ContactPage() {
   const audioRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
@@ -46,6 +46,7 @@ export default function HomePage() {
         loop 
         preload="auto"
       />
+      
       {/* Static Noise Effect */}
       <div className="absolute inset-0 opacity-20 sm:opacity-30 pointer-events-none">
         <div className="h-full w-full" style={{
@@ -69,44 +70,60 @@ export default function HomePage() {
       
       <div className="text-center max-w-4xl mx-auto space-y-6 sm:space-y-8 relative z-10 px-4 sm:px-0">
         <h1 className="font-[family-name:var(--font-press-start)] text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-wider mb-4">
-          MEMECORN
+          CONTACT
         </h1>
 
         <p className="font-[family-name:var(--font-press-start)] text-white text-lg sm:text-xl md:text-2xl tracking-wide mb-8 sm:mb-12">
-          &lt;CA :&gt;
+          &lt;GET IN TOUCH&gt;
         </p>
 
         <div className="border-2 sm:border-4 border-[#F7931A] p-4 sm:p-6 md:p-8 lg:p-12 space-y-4 sm:space-y-6 bg-black/40 backdrop-blur-sm">
           <h2 className="font-[family-name:var(--font-press-start)] text-white text-sm sm:text-base md:text-lg lg:text-xl tracking-wide mb-4 sm:mb-6">
-            IT AIN'T MUCH. BUT IT'S HONEST WORK.
+            REACH OUT TO THE CORN FIELD
           </h2>
 
           <div className="space-y-3 sm:space-y-4 text-left">
             <p className="font-[family-name:var(--font-press-start)] text-white text-xs sm:text-sm md:text-base tracking-wide leading-relaxed">
-              CORN DOESN'T ASK FOR MUCH.
-              JUST SUNLIGHT, WATER, AND YOUR WILL TO LIVE. SOME CALL IT A CROP.
-              WE CALL IT SOMETHING TO STARE AT WHILE THINKING ABOUT TAXES.
+              GOT QUESTIONS ABOUT CORN? WE'RE HERE TO HELP.
+              WHETHER YOU'RE PLANTING YOUR FIRST SEED OR HARVESTING YOUR THOUSANDTH CROP,
+              WE'VE GOT THE DIRT ON EVERYTHING CORN-RELATED.
             </p>
             <p className="font-[family-name:var(--font-press-start)] text-white text-xs sm:text-sm md:text-base tracking-wide leading-relaxed">
-              EVERY YEAR WE PLANT, PRETEND WE KNOW WHAT WE'RE DOING,
-              AND WATCH WEATHER RUIN EVERYTHING ANYWAY.
+              EMAIL US AT: CONTACT@MEMECORN.FUN
+              OR FIND US ON TWITTER: @MEMECORNFUN
             </p>
             <p className="font-[family-name:var(--font-press-start)] text-white text-xs sm:text-sm md:text-base tracking-wide leading-relaxed">
-              CORN IS PATIENT.
-              CORN DOESN'T CARE ABOUT YOUR PLANS, YOUR FEELINGS, OR YOUR LITTLE STARTUP.
-              CORN WAITS WHILE YOU PANIC.
-              CORN JUST GROWS.
+              WE RESPOND FASTER THAN CORN GROWS.
+              (THAT'S PRETTY FAST, BY THE WAY.)
             </p>
-            <p className="font-[family-name:var(--font-press-start)] text-white text-xs sm:text-sm md:text-base tracking-wide leading-relaxed">
-              WE DON'T DREAM OUT HERE.
-              WE JUST RUN OUT OF DIESEL AND HOPE THE BANK FORGETS ABOUT US.
-              CORN WAS, IS, AND ALWAYS WILL BE JUST A CORN.
-              STUBBORN. USELESSLY HONEST. AND STILL GROWING ANYWAY.
-            </p>
+          </div>
+
+          {/* Contact Links */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+            <a 
+              href="mailto:contact@memecorn.fun"
+              className="border-2 border-[#F7931A] text-[#F7931A] px-4 py-2 text-xs sm:text-sm font-[family-name:var(--font-press-start)] hover:bg-[#F7931A] hover:text-black transition-colors duration-200"
+            >
+              EMAIL US
+            </a>
+            <a 
+              href="https://x.com/memecornfun"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-[#F7931A] text-[#F7931A] px-4 py-2 text-xs sm:text-sm font-[family-name:var(--font-press-start)] hover:bg-[#F7931A] hover:text-black transition-colors duration-200"
+            >
+              TWITTER
+            </a>
+            <Link 
+              href="/"
+              className="border-2 border-[#F7931A] text-[#F7931A] px-4 py-2 text-xs sm:text-sm font-[family-name:var(--font-press-start)] hover:bg-[#F7931A] hover:text-black transition-colors duration-200"
+            >
+              HOME
+            </Link>
           </div>
         </div>
 
-        {/* Animated GIF Navigation */}
+        {/* Navigation GIFs */}
         <div className="mt-8 sm:mt-12 flex flex-wrap justify-center items-center gap-4 sm:gap-6">
           {/* Forum GIF - Links to Twitter */}
           <a 
@@ -131,14 +148,14 @@ export default function HomePage() {
             />
           </Link>
 
-          {/* Pager GIF - Links to Contact */}
-          <Link href="/contact" className="flex items-center justify-center hover:scale-110 transition-transform duration-200">
+          {/* Pager GIF - Current Page */}
+          <div className="flex items-center justify-center opacity-50">
             <img 
               src="https://dwvo2npct47gg.cloudfront.net/gifs/pager.gif" 
               alt="Contact" 
               className="w-16 h-16 sm:w-20 sm:h-20"
             />
-          </Link>
+          </div>
 
           {/* About - Question Block GIF */}
           <div className="flex items-center justify-center">
